@@ -122,79 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Entry_1
-      rect:
-        serializedVersion: 2
-        x: 141
-        y: 59
-        width: 16
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4107e41caa150c5b0800000000000000
-      internalID: -5350186563486715884
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Entry_2
-      rect:
-        serializedVersion: 2
-        x: 159
-        y: 0
-        width: 97
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 097c6ed9ba1b7c650800000000000000
-      internalID: 6253161958273894288
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Entry_3
-      rect:
-        serializedVersion: 2
-        x: 131
-        y: 0
-        width: 16
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7a5889513fab42d40800000000000000
-      internalID: 5558773393284171175
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Entry_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 31
-        height: 63
+        x: 0
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,7 +147,7 @@ TextureImporter:
       name: Entry_4
       rect:
         serializedVersion: 2
-        x: 32
+        x: 128
         y: 0
         width: 32
         height: 64
@@ -235,7 +169,7 @@ TextureImporter:
       name: Entry_5
       rect:
         serializedVersion: 2
-        x: 64
+        x: 160
         y: 0
         width: 32
         height: 64
@@ -249,6 +183,116 @@ TextureImporter:
       bones: []
       spriteID: 3fbfa6877d7504729ad174d461cc3655
       internalID: -2072702205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Entry_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d9a9636a113e4352a266fb379922ad8
+      internalID: -1845099982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Entry_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d02f54f3859eb44eea31b27235061bb4
+      internalID: -429205340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Entry_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed8ad7333c7624a72ac1a77a41b45de2
+      internalID: -1735206381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Entry_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2cb47484a56a49b0b1e2b536aeda4ea
+      internalID: 1091428288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Entry_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1bdb573ad3fe47d1bab2b3d6860d4e0
+      internalID: 1033035907
       vertices: []
       indices: 
       edges: []
@@ -268,8 +312,13 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Entry_0: -859266477
+      Entry_1: -1845099982
+      Entry_2: -429205340
+      Entry_3: -1735206381
       Entry_4: -352524404
       Entry_5: -2072702205
+      Entry_6: 1091428288
+      Entry_7: 1033035907
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
