@@ -4,10 +4,9 @@ using System.Collections;
 public class ScreenScript : MonoBehaviour
 {
     private ObjectAnimation gateAnimation;
-    private ObjectAnimation screenAnimation;
     public float WaitTime = 1f;
     private bool playerTouching = false;
-    public Sprite greenSprite;
+    public Sprite[] sprites;
     private SpriteRenderer screenRenderer;
 
     void Start()
@@ -40,7 +39,7 @@ public class ScreenScript : MonoBehaviour
             if (!gateAnimation.isCoroutineRunning)
             {
                 StartCoroutine(gateAnimation.MoveDown());
-                screenRenderer.sprite = greenSprite;
+                screenRenderer.sprite = sprites[0];
             }
         }
     }
@@ -54,6 +53,7 @@ public class ScreenScript : MonoBehaviour
             if (!gateAnimation.isCoroutineRunning)
             {
                 Invoke("StartGateCoroutine", WaitTime);
+                screenRenderer.sprite = sprites[1];
             }
         }
     }
