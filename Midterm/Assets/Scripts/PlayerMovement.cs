@@ -9,15 +9,17 @@ public class PlayerMovement : MonoBehaviour
     bool isFacingRight = false;
 
     public float jumpForce = 20f;
-    bool isJumping = false;
+    bool isGrounded = true;
 
     Rigidbody2D playerRigidbody;
+    Animator animator;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerRigidbody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -26,16 +28,19 @@ public class PlayerMovement : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         ChangeHorizontalDirection();
 
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && !isJumping)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && isGrounded)
         {
             playerRigidbody.linearVelocity = new Vector2(playerRigidbody.linearVelocityX, jumpForce);
-            isJumping = true;
+            isGrounded = false;
+            animator.SetBool("isJumping", !isGrounded);
         }
     }
 
     private void FixedUpdate()
     {
         playerRigidbody.linearVelocity = new Vector2(horizontalInput * moveSpeed, playerRigidbody.linearVelocityY);
+        animator.SetFloat("xVelocity", Mathf.Abs(playerRigidbody.linearVelocityX));
+        animator.SetFloat("yVelocity", playerRigidbody.linearVelocityY);
     }
 
     private void ChangeHorizontalDirection()
@@ -49,9 +54,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        isJumping = false;
+        isGrounded = true;
+        animator.SetBool("isJumping", !isGrounded);
     }
 }
 
