@@ -7,6 +7,7 @@ public class ObjectAnimation : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public Sprite[] sprites;
     public float lifeTime = 1f;
+    public float holdTime = 0f;
     public bool isCoroutineRunning = false;
     public Vector2[] colliderOffsets = 
     {
@@ -31,7 +32,7 @@ public class ObjectAnimation : MonoBehaviour
     public IEnumerator MoveDown()
     {
         isCoroutineRunning = true;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(holdTime);
         float WaitTime = lifeTime/sprites.Length;
         for (int i = 0; i < sprites.Length; i++)
         {
@@ -45,7 +46,7 @@ public class ObjectAnimation : MonoBehaviour
     public IEnumerator MoveUp()
     {
         isCoroutineRunning = true;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(holdTime);
         float WaitTime = lifeTime/sprites.Length;
         for (int i = sprites.Length - 1; i >= 0; i--)
         {
