@@ -1,15 +1,20 @@
 using UnityEngine;
 using System.Collections;
+using UnityEditor.ShaderGraph;
 
 public class PlayerMovement : MonoBehaviour
 {
 
-    float horizontalInput;
+    float direction;
     public float moveSpeed = 5f;
     bool isFacingRight = false;
-
     public float jumpForce = 20f;
-    bool isGrounded = true;
+
+    public Transform groundCheck;
+    public float groundCheckRadius;
+    public LayerMask groundLayer;
+    private bool isGrounded;
+
 
     Rigidbody2D playerRigidbody;
     Animator animator;
@@ -25,27 +30,31 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        direction = Input.GetAxisRaw("Horizontal");
+
         ChangeHorizontalDirection();
 
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && isGrounded)
         {
             playerRigidbody.linearVelocity = new Vector2(playerRigidbody.linearVelocityX, jumpForce);
-            isGrounded = false;
-            animator.SetBool("isJumping", !isGrounded);
+
         }
+
+        animator.SetBool("isJumping", !isGrounded);
+
     }
 
     private void FixedUpdate()
     {
-        playerRigidbody.linearVelocity = new Vector2(horizontalInput * moveSpeed, playerRigidbody.linearVelocityY);
+        playerRigidbody.linearVelocity = new Vector2(direction * moveSpeed, playerRigidbody.linearVelocityY);
         animator.SetFloat("xVelocity", Mathf.Abs(playerRigidbody.linearVelocityX));
         animator.SetFloat("yVelocity", playerRigidbody.linearVelocityY);
     }
 
     private void ChangeHorizontalDirection()
     {
-        if (!isFacingRight && horizontalInput < 0 || isFacingRight && horizontalInput > 0)
+        if (!isFacingRight && direction < 0 || isFacingRight && direction > 0)
         {
             isFacingRight = !isFacingRight;
             Vector3 localScale = transform.localScale;
@@ -54,10 +63,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        isGrounded = true;
-        animator.SetBool("isJumping", !isGrounded);
-    }
+
+
+
 }
 
