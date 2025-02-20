@@ -230,13 +230,15 @@ MonoBehaviour:
   - clip:
     - {fileID: 8300000, guid: 460b1a3d005076441a6c8c3ca8bbdb28, type: 3}
     - {fileID: 8300000, guid: edb2684fafb146c40aa4c8094e2c0d23, type: 3}
-    - {fileID: 8300000, guid: f58b1ee88ae3aea438d9e082b607186f, type: 3}
     - {fileID: 8300000, guid: 32b6a11abd2229b4b84783af5c907022, type: 3}
     - {fileID: 8300000, guid: 460b1a3d005076441a6c8c3ca8bbdb28, type: 3}
     - {fileID: 8300000, guid: edb2684fafb146c40aa4c8094e2c0d23, type: 3}
-    - {fileID: 8300000, guid: f58b1ee88ae3aea438d9e082b607186f, type: 3}
     name: CatWalkOnMetal
-    volume: 1
+    volume: 13
+  - clip:
+    - {fileID: 8300000, guid: ffec0195dc626a9449df902c3206ced4, type: 3}
+    name: Jump
+    volume: 0.3
 --- !u!82 &-5722669924943248091
 AudioSource:
   m_ObjectHideFlags: 0

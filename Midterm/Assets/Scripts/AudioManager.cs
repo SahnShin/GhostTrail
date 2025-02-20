@@ -25,6 +25,7 @@ public class AudioManager : MonoBehaviour
                     audioSource.PlayOneShot(sound.clip[randomIndex], sound.volume);
                 }
             }
+            
         }
     }
 

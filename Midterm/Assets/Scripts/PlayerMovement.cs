@@ -15,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayer;
     private bool isGrounded;
 
-
     Rigidbody2D playerRigidbody;
     Animator animator;
 
