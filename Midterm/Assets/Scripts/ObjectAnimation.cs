@@ -3,6 +3,17 @@ using System.Collections;
 
 public class ObjectAnimation : MonoBehaviour
 {
+
+    //added by Sahnneee -- remove comment after successful merge
+    public CapsuleCollider2D killCollider;
+    private Vector2[] killZoneOffset =
+    {
+        new Vector2(0f, 0f),
+        new Vector2(0f, -0.50f),
+        new Vector2(0f, -0.85f),
+        new Vector2(0f, -0.85f)
+    };
+
     private BoxCollider2D objectCollider;
     private SpriteRenderer spriteRenderer;
     public Sprite[] sprites;
@@ -37,6 +48,9 @@ public class ObjectAnimation : MonoBehaviour
         {
             spriteRenderer.sprite = sprites[i];
             objectCollider.offset = colliderOffsets[i];
+            //remove comment after successful merge
+            killCollider.offset = killZoneOffset[i];
+
             yield return new WaitForSeconds(WaitTime);
         }
         isCoroutineRunning = false;
@@ -51,6 +65,9 @@ public class ObjectAnimation : MonoBehaviour
         {
             spriteRenderer.sprite = sprites[i];
             objectCollider.offset = colliderOffsets[i];
+
+            //remove comment after successful merge
+            killCollider.offset = killZoneOffset[i];
             yield return new WaitForSeconds(WaitTime);
         }
         isCoroutineRunning = false;
