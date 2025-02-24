@@ -370,6 +370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recordedPositions: []
+  recordedDirections: []
   recordInterval: 0.1
 --- !u!1 &4145933958976106457
 GameObject:

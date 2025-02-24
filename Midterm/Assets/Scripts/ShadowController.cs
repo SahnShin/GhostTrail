@@ -5,11 +5,14 @@ using System.Collections;
 public class ShadowController : MonoBehaviour
 {
     public float replaySpeed = 6.0f;
-    public float delayStart = 1.5f;
+    public float delayStart = 3f;
 
     private List<Vector3> _recordedPositions;
     private List<Vector2> _recordedDirections;
     private int _currentPositionIndex = 0;
+
+    public int CurrentPositionIndex => _currentPositionIndex;
+    public List<Vector2> RecordedDirections => _recordedDirections;
     Collider2D shadowCollider;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -39,14 +42,14 @@ public class ShadowController : MonoBehaviour
 
         if (_recordedPositions.Count > 0)
         {
-            transform.position = _recordedPositions[0];
+            transform.position = _recordedPositions[0] + new Vector3(-3f, 0, 0);
         }
 
         shadowCollider = GetComponent<Collider2D>();
-        if (shadowCollider != null)
-        {
-            shadowCollider.enabled = false;
-        }
+        //if (shadowCollider != null)
+        //{
+        //    shadowCollider.enabled = false;
+        //}
 
         StartCoroutine(DelayStart());
     }
@@ -54,11 +57,10 @@ public class ShadowController : MonoBehaviour
     private IEnumerator DelayStart()
     {
         yield return new WaitForSeconds(delayStart);
-        //_isMoving = true;
 
-        if (shadowCollider != null)
-        {
-            shadowCollider.enabled = true;
-        }
+        //if (shadowCollider != null)
+        //{
+        //    shadowCollider.enabled = true;
+        //}
     }
 }
