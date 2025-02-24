@@ -6,13 +6,17 @@ public class MovementRecorder : MonoBehaviour
 {
     public List<Vector3> recordedPositions = new List<Vector3>();
     public List<Vector2> recordedDirections = new List<Vector2>();
+    public List<bool> recordedJumps = new List<bool>();
     private Vector3 lastPosition;
 
     public float recordInterval = 0.5f;
 
+    PlayerMovement playerMovement;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        playerMovement = GetComponent<PlayerMovement>();
         lastPosition = transform.position;
         StartCoroutine(RecordMovement());
     }
@@ -32,6 +36,7 @@ public class MovementRecorder : MonoBehaviour
 
             recordedDirections.Add(direction);
             recordedPositions.Add(transform.position);
+            recordedJumps.Add(!playerMovement.IsGrounded);
 
             lastPosition = currentPosition;
 
@@ -43,5 +48,6 @@ public class MovementRecorder : MonoBehaviour
     {
         recordedDirections.Clear();
         recordedPositions.Clear();
+        recordedJumps.Clear();
     }
 }
