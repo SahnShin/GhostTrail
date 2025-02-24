@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -4087727043836015868}
   - component: {fileID: 4436153423489461208}
   - component: {fileID: 1567361498308470063}
+  - component: {fileID: -983354241101517576}
   m_Layer: 0
   m_Name: Screen
   m_TagString: Untagged
@@ -108,6 +109,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   lifeTime: 1
+  holdTime: 0
   isCoroutineRunning: 0
   colliderOffsets:
   - {x: 0, y: 0.75}
@@ -152,7 +154,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 0.875}
+    oldSize: {x: 0.4, y: 0.7}
     newSize: {x: 0.5, y: 0.875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -160,3 +162,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.5, y: 0.875}
   m_EdgeRadius: 0
+--- !u!114 &-983354241101517576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3165123258957542169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0759cadb9a844849b733d404b73e465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WaitTime: 1
+  sprites:
+  - {fileID: 8787261086160429966, guid: dfde7924da895415db514ea142abf28c, type: 3}
+  - {fileID: 7190894766089717901, guid: e249bfd71b3de4373af640d08beb15a2, type: 3}
