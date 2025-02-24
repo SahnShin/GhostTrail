@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3215530301538339581}
   - component: {fileID: 2414495939643215344}
-  - component: {fileID: 1252958162568215214}
   - component: {fileID: 8970504761969589887}
   - component: {fileID: 236131234666195304}
   m_Layer: 3
@@ -90,31 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1252958162568215214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2354940474275367803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e85e296613fd46838472672c848d05c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 187112481, guid: d51d7592db8de434890dbb3e001e764b, type: 3}
-  - {fileID: 1714666365, guid: d51d7592db8de434890dbb3e001e764b, type: 3}
-  - {fileID: -155965508, guid: d51d7592db8de434890dbb3e001e764b, type: 3}
-  - {fileID: 1638708060, guid: d51d7592db8de434890dbb3e001e764b, type: 3}
-  lifeTime: 1
-  holdTime: 0
-  isCoroutineRunning: 0
-  colliderOffsets:
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
 --- !u!61 &8970504761969589887
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -173,3 +147,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b882b92d3ac4a1f953669ce8798f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDouble: 0

@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3666086441510929606}
   - component: {fileID: 3508369088615437908}
-  - component: {fileID: -8054075067511771288}
   - component: {fileID: 4886503876033232876}
   - component: {fileID: -8863328118897100593}
+  - component: {fileID: 4487509030356883960}
   m_Layer: 3
   m_Name: MovingPlatformLeft
   m_TagString: Ground
@@ -90,31 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-8054075067511771288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 852368489891477498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e85e296613fd46838472672c848d05c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 474159335, guid: 63ddb166024374f5685645a51546da60, type: 3}
-  - {fileID: -53886354, guid: 63ddb166024374f5685645a51546da60, type: 3}
-  - {fileID: 289725683, guid: 63ddb166024374f5685645a51546da60, type: 3}
-  - {fileID: -1568279290, guid: 63ddb166024374f5685645a51546da60, type: 3}
-  lifeTime: 0.7
-  holdTime: 0
-  isCoroutineRunning: 0
-  colliderOffsets:
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
 --- !u!114 &4886503876033232876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,6 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b882b92d3ac4a1f953669ce8798f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDouble: 0
 --- !u!61 &-8863328118897100593
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -173,3 +149,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.64, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &4487509030356883960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852368489891477498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faf8808a465774af09f51dde5ca56f74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 474159335, guid: 63ddb166024374f5685645a51546da60, type: 3}
+  - {fileID: -53886354, guid: 63ddb166024374f5685645a51546da60, type: 3}
+  - {fileID: 289725683, guid: 63ddb166024374f5685645a51546da60, type: 3}
+  - {fileID: -1568279290, guid: 63ddb166024374f5685645a51546da60, type: 3}
+  lifeTime: 1
+  holdTime: 0
+  isCoroutineRunning: 0
+  colliderOffsets:
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}

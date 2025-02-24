@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 973665620999729015}
   - component: {fileID: -5355685984452822003}
-  - component: {fileID: -1472447468124078430}
   - component: {fileID: 4857263157511065201}
   - component: {fileID: -7028057943229923843}
+  - component: {fileID: 3101540646627928874}
   m_Layer: 3
   m_Name: MovingPlatformMiddle
   m_TagString: Ground
@@ -90,31 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-1472447468124078430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1930451610055503129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e85e296613fd46838472672c848d05c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: -1621143823, guid: 741883faa3d3a4cca9baa3a67a852f34, type: 3}
-  - {fileID: 2145599559, guid: 741883faa3d3a4cca9baa3a67a852f34, type: 3}
-  - {fileID: 898017399, guid: 741883faa3d3a4cca9baa3a67a852f34, type: 3}
-  - {fileID: -758813308, guid: 741883faa3d3a4cca9baa3a67a852f34, type: 3}
-  lifeTime: 0.7
-  holdTime: 0
-  isCoroutineRunning: 0
-  colliderOffsets:
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
 --- !u!114 &4857263157511065201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,6 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b882b92d3ac4a1f953669ce8798f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDouble: 0
 --- !u!61 &-7028057943229923843
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -173,3 +149,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.64, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &3101540646627928874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930451610055503129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faf8808a465774af09f51dde5ca56f74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -1621143823, guid: 741883faa3d3a4cca9baa3a67a852f34, type: 3}
+  - {fileID: 2145599559, guid: 741883faa3d3a4cca9baa3a67a852f34, type: 3}
+  - {fileID: 898017399, guid: 741883faa3d3a4cca9baa3a67a852f34, type: 3}
+  - {fileID: -758813308, guid: 741883faa3d3a4cca9baa3a67a852f34, type: 3}
+  lifeTime: 1
+  holdTime: 0
+  isCoroutineRunning: 0
+  colliderOffsets:
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}

@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 7324894823607564755}
   - component: {fileID: 402964591417772515}
   - component: {fileID: 1964416552126431094}
-  - component: {fileID: 8764026590885994598}
   - component: {fileID: -3931815878849185509}
+  - component: {fileID: 6193990054757583307}
+  - component: {fileID: 7928401145674065038}
   m_Layer: 0
   m_Name: Hammer
   m_TagString: Untagged
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2094273812, guid: 18684d85b63bf43b6beca50b35717f3a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -126,17 +127,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0010671616, y: -0.07724869}
+  m_Offset: {x: 0.0010671616, y: -0.031069994}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8, y: 1.6}
+    oldSize: {x: 0.64, y: 1.28}
     newSize: {x: 0.32, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.6344986, y: 1.2837055}
+  m_Size: {x: 0.6344986, y: 1.1913481}
   m_EdgeRadius: 0
 --- !u!114 &1964416552126431094
 MonoBehaviour:
@@ -151,30 +152,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killCollider: {fileID: 531988157037619864}
-  sprites:
-  - {fileID: 2127880096, guid: 18684d85b63bf43b6beca50b35717f3a, type: 3}
-  - {fileID: -288049834, guid: 18684d85b63bf43b6beca50b35717f3a, type: 3}
-  - {fileID: 2044326495, guid: 18684d85b63bf43b6beca50b35717f3a, type: 3}
-  - {fileID: -2094273812, guid: 18684d85b63bf43b6beca50b35717f3a, type: 3}
+  killZoneOffset:
+  - {x: 0, y: -0.85}
+  - {x: 0, y: -0.85}
+  - {x: 0, y: -0.85}
+  - {x: 0, y: -0.6}
+  - {x: 0, y: -15}
+  spriteNumber: 5
   lifeTime: 1
+  holdTime: 0
   isCoroutineRunning: 0
-  colliderOffsets:
-  - {x: 0, y: 0.6}
-  - {x: 0, y: 0.3}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
---- !u!114 &8764026590885994598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4088725402559904245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58265099a2122459aaf181af75d746b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &-3931815878849185509
 Rigidbody2D:
   serializedVersion: 5
@@ -202,6 +189,46 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6193990054757583307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4088725402559904245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7b882b92d3ac4a1f953669ce8798f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHammer: 1
+--- !u!114 &7928401145674065038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4088725402559904245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faf8808a465774af09f51dde5ca56f74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 2127880096, guid: 18684d85b63bf43b6beca50b35717f3a, type: 3}
+  - {fileID: -288049834, guid: 18684d85b63bf43b6beca50b35717f3a, type: 3}
+  - {fileID: 2044326495, guid: 18684d85b63bf43b6beca50b35717f3a, type: 3}
+  - {fileID: -2094273812, guid: 18684d85b63bf43b6beca50b35717f3a, type: 3}
+  - {fileID: -242823680, guid: 18684d85b63bf43b6beca50b35717f3a, type: 3}
+  lifeTime: 1
+  holdTime: 0
+  isCoroutineRunning: 0
+  colliderOffsets:
+  - {x: 0, y: 0.75}
+  - {x: 0, y: 0.3}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
 --- !u!1 &8229052964188616697
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,7 +255,7 @@ Transform:
   m_GameObject: {fileID: 8229052964188616697}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.036, z: 0}
+  m_LocalPosition: {x: 0.003, y: 0.184, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -268,6 +295,6 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.000000024654149, y: -0.75}
-  m_Size: {x: 0.79543555, y: 0.1499206}
+  m_Offset: {x: -0.005736441, y: -0.75}
+  m_Size: {x: 0.5621428, y: 0.1499206}
   m_Direction: 1

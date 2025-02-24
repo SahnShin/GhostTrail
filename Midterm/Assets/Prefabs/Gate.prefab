@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5714521280277864949}
   - component: {fileID: 3917142551432821231}
-  - component: {fileID: 250369882402478308}
   - component: {fileID: 792674375901873563}
   - component: {fileID: 5569277488944217751}
+  - component: {fileID: 4038879009611370174}
   m_Layer: 0
   m_Name: Gate
   m_TagString: Untagged
@@ -90,33 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &250369882402478308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8708230770333450022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e85e296613fd46838472672c848d05c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: -859266477, guid: a465de8e367084b19a22fcadeb40af33, type: 3}
-  - {fileID: -1845099982, guid: a465de8e367084b19a22fcadeb40af33, type: 3}
-  - {fileID: -429205340, guid: a465de8e367084b19a22fcadeb40af33, type: 3}
-  - {fileID: -1735206381, guid: a465de8e367084b19a22fcadeb40af33, type: 3}
-  - {fileID: -352524404, guid: a465de8e367084b19a22fcadeb40af33, type: 3}
-  lifeTime: 0.8
-  holdTime: 0
-  isCoroutineRunning: 0
-  colliderOffsets:
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 1}
-  - {x: 0, y: 1.6}
-  - {x: 0, y: 1.6}
 --- !u!61 &792674375901873563
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -155,7 +128,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 1.28}
+    oldSize: {x: 0.5925926, y: 1.1851852}
     newSize: {x: 0.775, y: 1.575}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -190,3 +163,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4038879009611370174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8708230770333450022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faf8808a465774af09f51dde5ca56f74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -859266477, guid: a465de8e367084b19a22fcadeb40af33, type: 3}
+  - {fileID: -1845099982, guid: a465de8e367084b19a22fcadeb40af33, type: 3}
+  - {fileID: -429205340, guid: a465de8e367084b19a22fcadeb40af33, type: 3}
+  - {fileID: -1735206381, guid: a465de8e367084b19a22fcadeb40af33, type: 3}
+  - {fileID: -352524404, guid: a465de8e367084b19a22fcadeb40af33, type: 3}
+  lifeTime: 1
+  holdTime: 0
+  isCoroutineRunning: 0
+  colliderOffsets:
+  - {x: 0, y: 0.75}
+  - {x: 0, y: 0.3}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
