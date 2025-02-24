@@ -160,7 +160,7 @@ MonoBehaviour:
   - {x: 0, y: -15}
   spriteNumber: 5
   lifeTime: 1
-  holdTime: 0
+  holdTime: 0.5
   isCoroutineRunning: 0
 --- !u!50 &-3931815878849185509
 Rigidbody2D:
@@ -221,7 +221,7 @@ MonoBehaviour:
   - {fileID: -2094273812, guid: 18684d85b63bf43b6beca50b35717f3a, type: 3}
   - {fileID: -242823680, guid: 18684d85b63bf43b6beca50b35717f3a, type: 3}
   lifeTime: 1
-  holdTime: 0
+  holdTime: 0.5
   isCoroutineRunning: 0
   colliderOffsets:
   - {x: 0, y: 0.75}

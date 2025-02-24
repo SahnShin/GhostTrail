@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CoinScript : MonoBehaviour
+public class Timer : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -12,13 +12,5 @@ public class CoinScript : MonoBehaviour
     void Update()
     {
         
-    }
-
-  void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))  
-        {
-            Destroy(gameObject); 
-        }
     }
 }
