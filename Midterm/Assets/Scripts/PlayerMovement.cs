@@ -1,69 +1,97 @@
 using UnityEngine;
 using System.Collections;
 using UnityEditor.ShaderGraph;
+using Unity.VisualScripting;
 
 public class PlayerMovement : MonoBehaviour
 {
-
-    float direction;
+    //player movement variables
+    float horizontalInput;
     public float moveSpeed = 5f;
-    bool isFacingRight = false;
+    Vector2 playerVelocity;
     public float jumpForce = 20f;
+    private bool jumpButtonPressed;
 
+    //ground check variables
     public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask groundLayer;
-    private bool isGrounded;
+    private bool _isGrounded;
+
+    //wall check variables
+    private bool _isTouchingWall;
+    public Transform wallCheck;
+    public float wallCheckRadius;
+    private bool _isWallJumping;
+
+    //accessor
+    public bool IsGrounded => _isGrounded;
+    public Vector2 PlayerVelocity => playerVelocity;
 
     Rigidbody2D playerRigidbody;
-    Animator animator;
+    CatAudio catAudio;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
         playerRigidbody = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        catAudio = GetComponent<CatAudio>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-        direction = Input.GetAxisRaw("Horizontal");
+        _isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        _isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, groundLayer);
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        jumpButtonPressed = Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow);
 
-        ChangeHorizontalDirection();
-
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && isGrounded)
-        {
-            playerRigidbody.linearVelocity = new Vector2(playerRigidbody.linearVelocityX, jumpForce);
-
-        }
-
-        animator.SetBool("isJumping", !isGrounded);
-
+        HandleAllJumping();
     }
 
     private void FixedUpdate()
     {
-        playerRigidbody.linearVelocity = new Vector2(direction * moveSpeed, playerRigidbody.linearVelocityY);
-        animator.SetFloat("xVelocity", Mathf.Abs(playerRigidbody.linearVelocityX));
-        animator.SetFloat("yVelocity", playerRigidbody.linearVelocityY);
-    }
-
-    private void ChangeHorizontalDirection()
-    {
-        if (!isFacingRight && direction < 0 || isFacingRight && direction > 0)
+        if (!_isWallJumping)
         {
-            isFacingRight = !isFacingRight;
-            Vector3 localScale = transform.localScale;
-            localScale.x *= -1;
-            transform.localScale = localScale;
+            playerRigidbody.linearVelocity = new Vector2(horizontalInput * moveSpeed, playerRigidbody.linearVelocityY);
+            playerVelocity = playerRigidbody.linearVelocity; ;
         }
+
     }
 
+    private void HandleAllJumping()
+    {
 
+        if (jumpButtonPressed && _isGrounded)
+        {
+            playerRigidbody.linearVelocity = new Vector2(playerRigidbody.linearVelocityX, jumpForce);
+            catAudio?.PlayJumpSound();
 
+        } else if (jumpButtonPressed && _isTouchingWall)
+        {
+            HandleWallJump();
+            catAudio?.PlayJumpSound();
+        }
+        
+    }
+
+    private void HandleWallJump()
+    {
+        _isWallJumping = true;
+        float pushPlayerDirection = transform.position.x < wallCheck.position.x ? -1 : 1;
+
+        playerRigidbody.linearVelocity = new Vector2(pushPlayerDirection * moveSpeed, jumpForce);
+
+        Invoke(nameof(ResetWallJump), 0.2f);
+    }
+
+    private void ResetWallJump()
+    {
+        _isWallJumping = false;
+    }
 
 }
+
 
