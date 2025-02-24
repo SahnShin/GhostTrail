@@ -3,11 +3,14 @@ using System.Collections;
 
 public class ScreenScript : MonoBehaviour
 {
-    private ObjectAnimation gateAnimation;
     public float WaitTime = 1f;
-    private bool playerTouching = false;
     public Sprite[] sprites;
     private SpriteRenderer screenRenderer;
+    private ObjectAnimation gateAnimation;
+
+    private bool playerTouching = false;
+    private bool isMovingUp = false;
+    private bool isMovingDown = false;
 
     void Start()
     {
@@ -16,51 +19,63 @@ public class ScreenScript : MonoBehaviour
         gateAnimation = Gate.GetComponent<ObjectAnimation>();
     }
 
-    void Update()
-    {
-    
-    }
-
     private bool IsPlayerTouching(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            return true;
-        }
-        return false;
+        return collision.gameObject.CompareTag("Player");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (IsPlayerTouching(collision))
+        if (IsPlayerTouching(collision) && !isMovingDown) 
         {
             playerTouching = true;
             Debug.Log("Player is touching obj");
-            if (!gateAnimation.isCoroutineRunning)
+
+            if (isMovingUp)
             {
-                StartCoroutine(gateAnimation.MoveDown());
-                screenRenderer.sprite = sprites[0];
+                StopCoroutine(gateAnimation.MoveUp());
+                isMovingUp = false;
             }
+
+            StartCoroutine(MoveGateDown());
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && playerTouching)
+        if (IsPlayerTouching(collision) && playerTouching)
         {
             playerTouching = false;
-            Debug.Log("Player is no longer touching obj");    
-            if (!gateAnimation.isCoroutineRunning)
+            Debug.Log("Player is no longer touching obj");
+            screenRenderer.sprite = sprites[1];
+
+            if (!isMovingUp && !isMovingDown) 
             {
-                Invoke("StartGateCoroutine", WaitTime);
-                screenRenderer.sprite = sprites[1];
+                Invoke("StartMoveGateUp", WaitTime);
             }
         }
     }
 
-    void StartGateCoroutine()
+    void StartMoveGateUp()
     {
-        StartCoroutine(gateAnimation.MoveUp());
+        if (!isMovingUp && !playerTouching) 
+        {
+            StartCoroutine(MoveGateUp());
+        }
     }
 
+    IEnumerator MoveGateDown()
+    {
+        isMovingDown = true;
+        screenRenderer.sprite = sprites[0];
+        yield return StartCoroutine(gateAnimation.MoveDown());
+        isMovingDown = false;
+    }
+
+    IEnumerator MoveGateUp()
+    {
+        isMovingUp = true;
+        yield return StartCoroutine(gateAnimation.MoveUp());
+        isMovingUp = false;
+    }
 }
