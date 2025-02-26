@@ -354,8 +354,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f7ad9b6ee8b92429fdcec34ef4e015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathAnimationDelay: 0.2
+  deathAnimationDelay: 0.5
   respawnPoint: {fileID: 0}
+  Timer: {fileID: 0}
   shadowPrefab: {fileID: 7774015754568926657, guid: bf3fa2546fff186489def6134b243345, type: 3}
 --- !u!114 &720874225203528794
 MonoBehaviour:
@@ -371,6 +372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recordedPositions: []
   recordedDirections: []
+  recordedJumps: 
   recordInterval: 0.1
 --- !u!1 &4145933958976106457
 GameObject:
