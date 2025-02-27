@@ -5,6 +5,7 @@ public class UIManager : MonoBehaviour
 {
     public GameObject menuUI;
     public GameObject exitVerificationUI;
+    public GameObject levelSelector;
     public int sceneNumber;
     private bool isPaused = false;
 
@@ -18,6 +19,11 @@ public class UIManager : MonoBehaviour
         {
             exitVerificationUI.SetActive(false);
         }
+        if (levelSelector != null)
+        {
+            levelSelector.SetActive(false);
+        }
+
         if (Time.timeScale == 0f)
         {
             ResumeGame();
@@ -58,13 +64,14 @@ public class UIManager : MonoBehaviour
 
     public void RestartLevel()
     {
-        SceneManager.LoadScene(sceneNumber);
         ResumeGame();
+        FindFirstObjectByType<LoadingScreen>().LoadScene(sceneNumber);
     }
 
     public void TitleScreen()
     {
-        SceneManager.LoadScene(0);
+        ResumeGame();
+        FindFirstObjectByType<LoadingScreen>().LoadScene(0);
     }
 
     public void ToggleVerification()
@@ -79,5 +86,19 @@ public class UIManager : MonoBehaviour
     {
         UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
+    }
+
+    public void GoToLevel(int sceneNumber)
+    {
+        ResumeGame();
+        FindFirstObjectByType<LoadingScreen>().LoadScene(sceneNumber);
+    }
+
+    public void ToggleLevelSelector()
+    {
+        if (levelSelector != null)
+        {
+            levelSelector.SetActive(!levelSelector.activeSelf);
+        }
     }
 }
