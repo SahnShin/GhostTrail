@@ -5,6 +5,7 @@ public class CatAudio : MonoBehaviour
 
     public Sounds _footsteps;
     public Sounds _meows;
+    public Sounds _death;
 
     private AudioSource _audioSource;
     
@@ -24,5 +25,10 @@ public class CatAudio : MonoBehaviour
     {
         int randomIndex = Random.Range(0, _meows.clip.Length);
         _audioSource.PlayOneShot(_meows.clip[randomIndex], _meows.volume);  
+    }
+
+    public void PlayDeathSound()
+    {
+        _audioSource.PlayOneShot(_death.clip[0], _death.volume);
     }
 }

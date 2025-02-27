@@ -14,29 +14,36 @@ public class PlayerDeath : MonoBehaviour
     public GameObject shadowPrefab;
     private MovementRecorder movementRecorder;
     private GameObject currentShadow;
+    private CatAudio catAudio;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
         movementRecorder = GetComponent<MovementRecorder>();
         timerScript = Timer.GetComponent<Timer>();
+        catAudio = GetComponent<CatAudio>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if ((collision.CompareTag("KillingObjects") || collision.CompareTag("Enemy")) && !_isDead)
         {
-            
+            Debug.Log("Player is dead");
+            _isDead = true;
+            catAudio.PlayDeathSound();
             StartCoroutine(Death());
         }
     }
 
     private IEnumerator Death()
     {
-        _isDead = true;
+        
         animator.SetBool("isDead", _isDead);
         timerScript.ResetTimer();
 
         yield return new WaitForSeconds(deathAnimationDelay);
+        animator.SetBool("isDead", false);
+        _isDead = false;
+
 
         List<Vector3> shadowMovement = new List<Vector3>(movementRecorder.recordedPositions);
         List<Vector2> shadowDirections = new List<Vector2>(movementRecorder.recordedDirections);
@@ -55,8 +62,6 @@ public class PlayerDeath : MonoBehaviour
         movementRecorder.ResetRecordedPositions();
 
         transform.position = respawnPoint.position;
-        animator.SetBool("isDead", false);
-        _isDead = false;
 
     }
 
