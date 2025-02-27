@@ -6,9 +6,6 @@ public class CoinManager : MonoBehaviour
     public static CoinManager Instance;
     public int coinCount;
 
-    private GameObject player;
-
-    CoinCounter coinCounter;
 
     private void Awake()
     {
@@ -25,12 +22,19 @@ public class CoinManager : MonoBehaviour
     void Start()
     {
         coinCount = 0;
-        player = GameObject.FindGameObjectWithTag("Player");
-        coinCounter = player.GetComponent<CoinCounter>();
+      
     }
 
     void Update()
     {
-        coinCount = coinCounter.CoinCount;
+
     }
+
+    public void AddCoin()
+    {
+
+        coinCount++;
+
+    }
+
 }
