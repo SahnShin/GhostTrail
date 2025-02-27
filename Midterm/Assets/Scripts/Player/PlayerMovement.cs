@@ -31,8 +31,6 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D playerRigidbody;
     CatAudio catAudio;
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
 
@@ -40,7 +38,6 @@ public class PlayerMovement : MonoBehaviour
         catAudio = GetComponent<CatAudio>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         _isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);

@@ -13,7 +13,6 @@ public class MovementRecorder : MonoBehaviour
 
     PlayerMovement playerMovement;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
@@ -21,7 +20,6 @@ public class MovementRecorder : MonoBehaviour
         StartCoroutine(RecordMovement());
     }
 
-    // Update is called once per frame
     void Update()
     {
         

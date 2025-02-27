@@ -13,14 +13,11 @@ public class ShadowController : MonoBehaviour
 
     public int CurrentPositionIndex => _currentPositionIndex;
     public List<Vector2> RecordedDirections => _recordedDirections;
-    Collider2D shadowCollider;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (_recordedPositions == null || _currentPositionIndex >= _recordedPositions.Count)
@@ -45,12 +42,6 @@ public class ShadowController : MonoBehaviour
             transform.position = _recordedPositions[0] + new Vector3(-3f, 0, 0);
         }
 
-        shadowCollider = GetComponent<Collider2D>();
-        //if (shadowCollider != null)
-        //{
-        //    shadowCollider.enabled = false;
-        //}
-
         StartCoroutine(DelayStart());
     }
 
@@ -58,9 +49,5 @@ public class ShadowController : MonoBehaviour
     {
         yield return new WaitForSeconds(delayStart);
 
-        //if (shadowCollider != null)
-        //{
-        //    shadowCollider.enabled = true;
-        //}
     }
 }

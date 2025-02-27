@@ -10,8 +10,6 @@ public class PlayerAnimation : MonoBehaviour
     PlayerDeath playerDeath;
     Animator animator;
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
@@ -21,7 +19,6 @@ public class PlayerAnimation : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         velocity = playerMovement.PlayerVelocity;
