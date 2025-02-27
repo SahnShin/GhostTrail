@@ -27,7 +27,6 @@ public class PlayerDeath : MonoBehaviour
     {
         if ((collision.CompareTag("KillingObjects") || collision.CompareTag("Enemy")) && !_isDead)
         {
-            Debug.Log("Player is dead");
             _isDead = true;
             catAudio.PlayDeathSound();
             StartCoroutine(Death());

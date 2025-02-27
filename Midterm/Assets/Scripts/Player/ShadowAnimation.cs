@@ -13,7 +13,6 @@ public class ShadowAnimation : MonoBehaviour
 
     public float fadeDuration = 1.0f;
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         animator = GetComponent<Animator>();
