@@ -7,6 +7,7 @@ public class ScreenScript : MonoBehaviour
     public Sprite[] sprites;
     private SpriteRenderer screenRenderer;
     private ObjectAnimation gateAnimation;
+    private AudioSource audioSource;
 
     private bool playerTouching = false;
     private bool isMovingUp = false;
@@ -15,6 +16,7 @@ public class ScreenScript : MonoBehaviour
     void Start()
     {
         screenRenderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
         GameObject Gate = GameObject.Find("Gate");
         gateAnimation = Gate.GetComponent<ObjectAnimation>();
     }
@@ -29,7 +31,6 @@ public class ScreenScript : MonoBehaviour
         if (IsPlayerTouching(collider) && !isMovingDown) 
         {
             playerTouching = true;
-            Debug.Log("Player is touching obj");
 
             if (isMovingUp)
             {
@@ -45,7 +46,6 @@ public class ScreenScript : MonoBehaviour
         if (IsPlayerTouching(collider) && playerTouching)
         {
             playerTouching = false;
-            Debug.Log("Player is no longer touching obj");
             screenRenderer.sprite = sprites[1];
 
             if (!isMovingUp && !isMovingDown) 
@@ -67,6 +67,7 @@ public class ScreenScript : MonoBehaviour
     {
         isMovingDown = true;
         screenRenderer.sprite = sprites[0];
+        AudioManager.Instance.PlaySound(audioSource.clip, 0.4f);
         yield return StartCoroutine(gateAnimation.MoveDown());
         isMovingDown = false;
     }
