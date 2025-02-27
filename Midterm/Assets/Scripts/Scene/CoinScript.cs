@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class CoinScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private AudioSource audioSource; 
+
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -18,7 +18,8 @@ public class CoinScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))  
         {
-            Destroy(gameObject); 
+            AudioManager.Instance.PlaySound(audioSource.clip, 0.5f);
+            Destroy(gameObject);
         }
     }
 }
