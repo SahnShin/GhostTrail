@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CoinManager : MonoBehaviour
 {
@@ -27,7 +28,10 @@ public class CoinManager : MonoBehaviour
 
     void Update()
     {
-
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            coinCount = 0;
+        }
     }
 
     public void AddCoin()

@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class CoinTextUI : MonoBehaviour
 {
@@ -8,8 +9,14 @@ public class CoinTextUI : MonoBehaviour
 
     void Start()
     {
-        
+        SceneManager.sceneUnloaded += OnSceneUnloaded;
     }
+
+    void OnSceneUnloaded(Scene scene)
+    {
+
+    }
+
 
     void Update()
     {
@@ -17,5 +24,6 @@ public class CoinTextUI : MonoBehaviour
         {
             coinText.text = CoinManager.Instance.coinCount.ToString();
         }
+
     }
 }
