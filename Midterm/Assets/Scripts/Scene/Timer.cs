@@ -1,18 +1,18 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro; // Required if using TextMeshPro
+using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    public float startTime = 120f; // Default start time (2 minutes)
+    public float startTime = 120f; 
     private float timeRemaining;
-    public TextMeshProUGUI timerText; // Drag a TMP text object from UI here
+    public TextMeshProUGUI timerText; 
 
-    private bool timerRunning = true; // Ensures the timer runs
+    private bool timerRunning = true;
 
     void Start()
     {
-        ResetTimer(); // Initialize the timer when the game starts
+        ResetTimer(); 
     }
 
     void Update()

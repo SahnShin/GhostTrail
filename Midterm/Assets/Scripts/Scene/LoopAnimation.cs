@@ -26,12 +26,6 @@ public class LoopAnimation : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public IEnumerator SingleAnimationLoop()
     {
         while (true)

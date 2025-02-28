@@ -23,12 +23,6 @@ public class ObjectAnimation : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-
-    void Update()
-    {
-        
-    }
-
     public IEnumerator MoveDown()
     {
         isCoroutineRunning = true;

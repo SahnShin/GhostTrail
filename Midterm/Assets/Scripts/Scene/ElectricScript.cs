@@ -19,13 +19,11 @@ public class ElectricScript : MonoBehaviour
             if (gameObject.name == "Electric1") 
             {
                 ElectricManager.Instance.playerOnSwitch1 = true;
-                Debug.Log("Player stepped on switch 1");
                 StartCoroutine(loopAnimation.SingleAnimationLoop());
             }
             else if (gameObject.name == "Electric2")
             {
                 ElectricManager.Instance.playerOnSwitch2 = true;
-                Debug.Log("Player stepped on switch 2");
                 StartCoroutine(loopAnimation.SingleAnimationLoop());
             }
         }
@@ -34,18 +32,16 @@ public class ElectricScript : MonoBehaviour
             if (gameObject.name == "Electric1") 
             {
                 ElectricManager.Instance.enemyOnSwitch1 = true;
-                Debug.Log("Enemy stepped on switch 1");
                 StartCoroutine(loopAnimation.SingleAnimationLoop());
             }
             else if (gameObject.name == "Electric2")
             {
                 ElectricManager.Instance.enemyOnSwitch2 = true;
-                Debug.Log("Enemy stepped on switch 2");
                 StartCoroutine(loopAnimation.SingleAnimationLoop());
             }
         }
 
-        ElectricManager.Instance.CheckGateCondition(); // Recheck when someone steps on
+        ElectricManager.Instance.CheckGateCondition(); 
     }
 
     private void OnTriggerExit2D(Collider2D collider)
@@ -55,14 +51,12 @@ public class ElectricScript : MonoBehaviour
             if (gameObject.name == "Electric1")
             {
                 ElectricManager.Instance.playerOnSwitch1 = false;
-                Debug.Log("Player left switch 1");
                 StopAllCoroutines();
                 StartCoroutine(ResetSpriteAfterFrame());
             } 
             else if (gameObject.name == "Electric2") 
             {
                 ElectricManager.Instance.playerOnSwitch2 = false;
-                Debug.Log("Player left switch 2");
                 StopAllCoroutines();
                 StartCoroutine(ResetSpriteAfterFrame());
             }
@@ -72,14 +66,12 @@ public class ElectricScript : MonoBehaviour
             if (gameObject.name == "Electric1")
             {
                 ElectricManager.Instance.enemyOnSwitch1 = false;
-                Debug.Log("Enemy left switch 1");
                 StopAllCoroutines();
                 StartCoroutine(ResetSpriteAfterFrame());
             }
             else if (gameObject.name == "Electric2")
             {
                 ElectricManager.Instance.enemyOnSwitch2 = false;
-                Debug.Log("Enemy left switch 2");
                 StopAllCoroutines();
                 StartCoroutine(ResetSpriteAfterFrame());
             }
