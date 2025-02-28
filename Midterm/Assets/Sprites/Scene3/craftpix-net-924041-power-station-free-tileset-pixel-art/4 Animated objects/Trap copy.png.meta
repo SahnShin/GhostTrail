@@ -1,10 +1,43 @@
 fileFormatVersion: 2
-guid: cb3acd4ded23a405ebd93b5c148baf76
+guid: 5fcf6289899184ba597cd8dae1652774
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -928452794175279194
-    second: COUPON_0
+      213: 3929295353610324554
+    second: Trap copy_0
+  - first:
+      213: -5341094071035355605
+    second: Trap copy_1
+  - first:
+      213: 6061613186813011692
+    second: Trap copy_2
+  - first:
+      213: 1530640081275210773
+    second: Trap copy_3
+  - first:
+      213: 5223475405285645467
+    second: Trap copy_4
+  - first:
+      213: 8763168512508013768
+    second: Trap copy_5
+  - first:
+      213: -4929000865468559304
+    second: Trap copy_6
+  - first:
+      213: 1938387330335983642
+    second: Trap copy_7
+  - first:
+      213: -3090655597361397673
+    second: Trap copy_8
+  - first:
+      213: 244769069167197061
+    second: Trap copy_9
+  - first:
+      213: -7808336682396815860
+    second: Trap copy_10
+  - first:
+      213: -4946846313234085132
+    second: Trap copy_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +70,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +84,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,23 +146,51 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: COUPON_0
+      name: Trap copy_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 5
         y: 0
-        width: 1839
-        height: 2445
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 22
+        height: 36
+      alignment: 9
+      pivot: {x: 0.4999999, y: 0.660025}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      outline:
+      - - {x: 9, y: 10}
+        - {x: 7, y: 8}
+        - {x: 7, y: 6}
+        - {x: 11, y: 6}
+        - {x: 11, y: -18}
+        - {x: -11, y: -18}
+        - {x: -11, y: 6}
+        - {x: -7, y: 6}
+        - {x: -7, y: 8}
+        - {x: -9, y: 10}
+        - {x: -9, y: 15}
+        - {x: -6, y: 18}
+        - {x: 6, y: 18}
+        - {x: 9, y: 15}
+      physicsShape:
+      - - {x: 9, y: 10}
+        - {x: 7, y: 8}
+        - {x: 7, y: 6}
+        - {x: 11, y: 6}
+        - {x: 11, y: -18}
+        - {x: -11, y: -18}
+        - {x: -11, y: 6}
+        - {x: -7, y: 6}
+        - {x: -7, y: 8}
+        - {x: -9, y: 10}
+        - {x: -9, y: 15}
+        - {x: -6, y: 18}
+        - {x: 6, y: 18}
+        - {x: 9, y: 15}
+      tessellationDetail: 0
       bones: []
-      spriteID: 6afa6745a197d13f0800000000000000
-      internalID: -928452794175279194
+      spriteID: a4a49894e49a78630800000000000000
+      internalID: 3929295353610324554
       vertices: []
       indices: 
       edges: []
@@ -138,7 +199,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6809b2425385d4a319ad6bbad4c76a74
     internalID: 0
     vertices: []
     indices: 
@@ -147,7 +208,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Trap copy_0: 3929295353610324554
+      Trap copy_1: -5341094071035355605
+      Trap copy_2: 6061613186813011692
+      Trap copy_3: 1530640081275210773
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

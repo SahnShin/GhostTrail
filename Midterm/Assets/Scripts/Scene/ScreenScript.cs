@@ -10,8 +10,8 @@ public class ScreenScript : MonoBehaviour
     private AudioSource audioSource;
 
     private bool playerTouching = false;
-    private bool isMovingUp = false;
-    private bool isMovingDown = false;
+    private bool isOpening = false;
+    private bool isClosing = false;
 
     void Start()
     {
@@ -28,16 +28,16 @@ public class ScreenScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (IsPlayerTouching(collider) && !isMovingDown) 
+        if (IsPlayerTouching(collider) && !isOpening) 
         {
             playerTouching = true;
 
-            if (isMovingUp)
+            if (isClosing)
             {
                 StopCoroutine(gateAnimation.MoveUp());
-                isMovingUp = false;
+                isClosing = false;
             }
-            StartCoroutine(MoveGateDown());
+            StartCoroutine(OpenGate());
         }
     }
 
@@ -48,34 +48,34 @@ public class ScreenScript : MonoBehaviour
             playerTouching = false;
             screenRenderer.sprite = sprites[1];
 
-            if (!isMovingUp && !isMovingDown) 
+            if (!isOpening && !isClosing) 
             {
-                Invoke("StartMoveGateUp", WaitTime);
+                Invoke("StartCloseGate", WaitTime);
             }
         }
     }
 
-    void StartMoveGateUp()
+    void StartCloseGate()
     {
-        if (!isMovingUp && !playerTouching) 
+        if (!isClosing && !playerTouching) 
         {
-            StartCoroutine(MoveGateUp());
+            StartCoroutine(CloseGate());
         }
     }
 
-    IEnumerator MoveGateDown()
+    IEnumerator OpenGate()
     {
-        isMovingDown = true;
+        isOpening = true;
         screenRenderer.sprite = sprites[0];
         AudioManager.Instance.PlaySound(audioSource.clip, 0.4f);
         yield return StartCoroutine(gateAnimation.MoveDown());
-        isMovingDown = false;
+        isOpening = false;
     }
 
-    IEnumerator MoveGateUp()
+    IEnumerator CloseGate()
     {
-        isMovingUp = true;
+        isClosing = true;
         yield return StartCoroutine(gateAnimation.MoveUp());
-        isMovingUp = false;
+        isClosing = false;
     }
 }

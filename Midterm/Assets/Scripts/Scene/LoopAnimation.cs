@@ -6,6 +6,7 @@ public class LoopAnimation : MonoBehaviour
     private ObjectAnimation objectAnimation;
     private ObjectKill objectKill;
     public bool isHammer; 
+    public bool isElectric;
     void Start()
     {
         if (isHammer)
@@ -14,13 +15,13 @@ public class LoopAnimation : MonoBehaviour
         }
         objectAnimation = GetComponent<ObjectAnimation>();
 
-        if (!isHammer)
-        {
-            StartCoroutine(SingleAnimationLoop());
-        }
-        else
+        if (isHammer)
         {
             StartCoroutine(DoubleAnimationLoop());
+        }
+        else if (!isHammer && !isElectric)
+        {
+            StartCoroutine(SingleAnimationLoop());
         }
 
     }
@@ -31,7 +32,7 @@ public class LoopAnimation : MonoBehaviour
         
     }
 
-    IEnumerator SingleAnimationLoop()
+    public IEnumerator SingleAnimationLoop()
     {
         while (true)
         {
