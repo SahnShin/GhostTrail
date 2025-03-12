@@ -84,8 +84,7 @@ public class UIManager : MonoBehaviour
 
     public void ExitGame()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
-        Application.Quit();
+        UnityEngine.Application.Quit();
     }
 
     public void GoToLevel(int sceneNumber)
